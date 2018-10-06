@@ -1,7 +1,11 @@
 #include <iostream>
 #include <cmath>
 
-
+/*
+  Дан массив целых чисел А[0..n-1]. Известно, что на интервале [0, m] значения массива строго возрастают,
+  а на интервале [m, n-1] строго убывают. Найти m за O( log m ).
+    2 ≤ n ≤ 10000.
+*/
 
 size_t search(const int * arr, size_t size){
     size_t lastIndex = 0;
