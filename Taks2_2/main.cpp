@@ -11,17 +11,21 @@ size_t search(const int * arr, size_t size){
     size_t lastIndex = 0;
     size_t firstIndex = 0;
     size_t i = 1;
-    for(size_t i = 0; lastIndex < size; i++ ){
+    for(size_t i = 0;; i++ ){
         firstIndex = lastIndex;
         lastIndex = (size_t) pow(2.0, i);
+        if(lastIndex >= size){
+            lastIndex = size - 1;
+            break;
+        }
         if(arr[lastIndex] <= arr[firstIndex]){
             break;
         }
     }
 
-    if(lastIndex >= size){
-        lastIndex = size - 1;
-    }
+//    if(lastIndex >= size){
+//        lastIndex = size - 1;
+//    }
 
     size_t middleIndex = 0;
     while(firstIndex < lastIndex){

@@ -6,12 +6,15 @@
 template <class T>
 class Stack {
     public:
-        size_t realSize;
+//        size_t realSize;
+        bool isEmpty();
+        size_t size();
         Stack();
         ~Stack();
         void push(const T &elem);
         T pop();
     private:
+        size_t realSize;
         size_t bufferSize;
         T *buffer;
 };
@@ -35,7 +38,15 @@ Stack<T>::Stack() {
     buffer = new T[bufferSize];
     realSize = 0;
 }
+template <class T>
+bool Stack<T>::isEmpty() {
+    return realSize == 0;
+}
 
+template <class T>
+size_t Stack<T>::size() {
+    return realSize;
+}
 template <class T>
 Stack<T>::~Stack() {
     delete[] buffer;
@@ -80,9 +91,8 @@ void Queue<T>::push(const T &elem) {
 
 template <class T>
 T Queue<T>::pop() {
-    if(popStack.realSize == 0){
-        size_t sizePushStack = pushStack.realSize;
-        for(size_t i = 0; i < sizePushStack;i++){
+    if(popStack.isEmpty()){
+        while(!pushStack.isEmpty()){
             popStack.push(pushStack.pop());
         }
     }
