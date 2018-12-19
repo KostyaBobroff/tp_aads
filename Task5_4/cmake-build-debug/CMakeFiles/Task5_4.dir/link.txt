@@ -1,0 +1,1 @@
+/usr/bin/g++   -std=c++11 -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Task5_4.dir/main.cpp.o  -o Task5_4 

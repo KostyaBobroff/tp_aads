@@ -1,0 +1,3 @@
+/Users/Costa/Technopark/AaSD/Module3/LastSeminar/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Costa/Technopark/AaSD/Module3/LastSeminar/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Costa/Technopark/AaSD/Module3/LastSeminar/cmake-build-debug/CMakeFiles/LastSeminar.dir
