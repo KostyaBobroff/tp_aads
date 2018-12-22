@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Costa/Technopark/AaSD/Module3/Task2/main.cpp
+vector
+-
+queue
+-
+iostream
+-
+cassert
+-
+unordered_set
+-
+
