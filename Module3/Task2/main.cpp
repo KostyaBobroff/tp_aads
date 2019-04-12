@@ -30,7 +30,6 @@ public:
     virtual int VerticesCount() const ;
     //получение смежных ребер
     virtual const vector<int> GetAdjacentVertices(int vertex) const ;
-    int numberOfPaths(int from,int to);
 
 private:
     vector<vector<int>> AdjacencyLists;
@@ -74,16 +73,16 @@ CListGraph::CListGraph(IGraph *graph) {
 }
 
 //pair : first-lengthOfPath, second-pathsCount
-int CListGraph::numberOfPaths(int from,int to) {
+int numberOfPaths(IGraph* graph,int from,int to) {
 
-    vector<pair<int, int>> vertices(VerticesCount(), pair<int, int>(0,0));
+    vector<pair<int, int>> vertices(graph->VerticesCount(), pair<int, int>(0,0));
     queue<int> q;
     q.push(from);
     vertices[from].second = 1;
     while(!q.empty()){
         int startVertice = q.front();
         q.pop();
-        vector<int> adjacentVertices = GetAdjacentVertices(startVertice);
+        vector<int> adjacentVertices = graph->GetAdjacentVertices(startVertice);
         for(int i : adjacentVertices ){
             if(vertices[i].second == 0){
                 vertices[i].first = vertices[startVertice].first + 1;
@@ -115,6 +114,6 @@ int main()
     int to = 0;
     std::cin >> from >> to;
 
-    std::cout << graph.numberOfPaths(from, to);
+    std::cout << numberOfPaths(&graph,from, to);
     return 0;
 }
